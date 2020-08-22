@@ -1,0 +1,8 @@
+<div fxLayout="column" fxLayoutAlign="center center"  class="btn-container">
+  <button color="primary" (click)="handleDelete()" mat-raised-button>Hapus terjemahan ini</button>
+</div>
+ <mat-card>
+    <h3>Terjemahan untuk "{{word}}"</h3>
+  </mat-card>
+  <app-translation-list [fromArabic]="isFromArabic()" [translations]="translations">
+  </app-translation-list>

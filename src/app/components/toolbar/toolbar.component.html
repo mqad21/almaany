@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+    <button *ngIf="showHamburger" mat-icon-button class="icon" (click)="toggleDrawer()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <button (click)="handleBack()" *ngIf="!showHamburger" mat-icon-button class="icon">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="app-name">{{Constants.APP_NAME}}</span>
+    <span class="spacer"></span>
+    <button (click)="toggleMode()" mat-icon-button class="icon">
+        <mat-icon>{{getIcon()}}</mat-icon>
+    </button>
+</mat-toolbar>

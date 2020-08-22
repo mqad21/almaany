@@ -1,0 +1,16 @@
+<div>
+    <div fxLayout class="sidenav-header mat-primary mat-elevation-z2">
+        <img src="assets/icons/icon-72x72.png" alt="logo" width="30" height="30" style="margin-right:.5em"/>
+        <h4 class="mat-headline mat-primary">
+            {{ Constants.APP_NAME }}
+        </h4>
+    </div>
+    <mat-nav-list>
+        <div *ngFor="let menu of menus">
+            <a (click)="handleClose()" routerLink="{{menu.uri}}" routerLinkActive='active-link' [routerLinkActiveOptions]="{exact: true}" mat-list-item>
+                <mat-icon class="sidenav-menu-icon">{{ menu.icon }}</mat-icon>{{ menu.name }}
+            </a>
+            <mat-divider></mat-divider>
+        </div>
+    </mat-nav-list>
+</div>

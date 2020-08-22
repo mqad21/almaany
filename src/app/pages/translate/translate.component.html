@@ -1,0 +1,29 @@
+<div>
+    <mat-card (clickOutside)="handleFocusOut()" class="search-card">
+        <form [dir]="orientation" #translateForm autocomplete="off">
+            <td-search-box #searchBox name="searchTerm" class="search-box" (ngModelChange)="handleChange($event)" [(ngModel)]="searchTerm" backIcon="arrow_back" placeholder="Cari Terjemahan dari Arab / Indonesia ..." [alwaysVisible]="true" [showUnderline]="false" (click)="handleClick()" (focus)="handleClick()" (search)="handleSearch()">
+            </td-search-box>
+        </form>
+        <div *ngIf="isSearch">
+            <mat-nav-list class="search-list">
+                <mat-list-item (click)="handleSearch()" *ngIf="searchTerm">
+                    <div mat-line class="text-center">
+                        Cari terjemahan untuk "{{ searchTerm }}"
+                    </div>
+                </mat-list-item>
+                <mat-list-item (click)="setSearchTerm(history)" *ngFor="let history of recentSearches">
+                    <mat-icon mat-list-icon>history</mat-icon>
+                    <div mat-line>
+                        {{ history }}
+                    </div>
+                </mat-list-item>
+            </mat-nav-list>
+        </div>
+    </mat-card>
+    <app-translation-list [fromArabic]="fromArabic" [translations]="translations">
+    </app-translation-list>
+    <div *ngIf="error" class="error">{{ error }}</div>
+    <button (click)="handleFab()" *ngIf="translations" mat-fab color="primary" class="fab">
+        <mat-icon>{{getIcon()}}</mat-icon>
+    </button>
+</div>

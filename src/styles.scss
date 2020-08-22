@@ -1,0 +1,28 @@
+@import './styles.theme.scss';
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.text-center {
+    text-align: center;
+}
+
+.error {
+    text-align: center !important;
+    font-style: italic;
+    color: #8f8f8f;
+    line-height: 1.5em;
+    margin-top: 1em;
+    padding: 0 3em;
+}
+
+.dark-theme .error {
+    color: #e4e4e4;
+}
+
+div.td-loading-wrapper, div.td-loading {
+    min-height: unset !important;
+    height: 3em !important;
+    margin-top: 2em;
+}

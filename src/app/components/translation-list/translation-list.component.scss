@@ -1,0 +1,41 @@
+.translation-list {
+    padding: 0;
+    margin-top: 1.5em;
+    margin-bottom: 2.5em;
+    font-family: 'Amiri' !important;
+}
+
+.translation-list-item {
+    padding: 1em .5em;
+    height: auto;
+}
+
+.flex {
+    width: 100%;
+}
+
+.flex div {
+    word-break: keep-all;
+    line-height: 1.5em;
+}
+
+ul {
+    list-style-type: circle;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+ul li {
+    margin-bottom: 1em;
+}
+
+.ul-no-style {
+    list-style: none;
+}
+
+.arab-text {
+    font-size: 1.2em;
+    font-family: 'Amiri';
+    line-height: 2.5em;
+    text-align: right;
+}

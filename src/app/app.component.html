@@ -1,0 +1,18 @@
+<mat-drawer-container [class.dark-theme]="isDarkMode()" class="container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="over">
+        <app-drawer [drawer]="drawer"></app-drawer>
+    </mat-drawer>
+
+    <div class="sidenav-content">
+        <app-toolbar [drawer]="drawer">
+        </app-toolbar>
+        <div class="page-container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    
+    <div fxLayout="column" fxLayoutAlign="center center" class="btn-container" class="footer">
+        <p class="mat-body">Made with <mat-icon color="primary" inline>favorite</mat-icon> by <a class="link" href="https://instagram.com/mqad21">mqad21</a></p>
+    </div>
+
+</mat-drawer-container>

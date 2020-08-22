@@ -1,0 +1,4 @@
+<mat-card routerLink="/favorite/{{savedTranslation.id}}" matRipple class="card" *ngFor="let savedTranslation of savedTranslations">
+  {{savedTranslation.word}}
+</mat-card>
+<div *ngIf="isError()" class="error">{{ error }}</div>

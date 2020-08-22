@@ -1,0 +1,21 @@
+<mat-card *tdLoading="'searchWord'; type:'circular'; mode:'indeterminate'; strategy:'replace'; color:'primary'" class="translation-list">
+  <mat-list role="list" style="padding-top:0;">
+      <div *ngFor="let translation of translations">
+          <mat-list-item class="translation-list-item" role="listitem">
+              <div fxLayout="row inline" fxLayoutAlign="space-between top" class="flex" style="padding:1em">
+                  <div fxFlex="50" [class.arab-text]="fromArabic" style="margin-right:.75em">
+                      {{ translation.original }}
+                  </div>
+                  <div [class.arab-text]="!fromArabic" fxFlex="50" dir="auto" style="margin-left:.75em; margin-top:-1em">
+                      <ul [class.ul-no-style]="translation.translated.length === 1">
+                          <li *ngFor="let translated of translation.translated">
+                              {{ translated }}
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+      </div>
+  </mat-list>
+</mat-card>
